@@ -2854,7 +2854,7 @@ def xml_metadata_parser(data, filename):
     tree = ElementTree()
     tree.parse(data)
 
-    for node in tree.getiterator('{http://schemas.microsoft.com/office/2006/keyEncryptor/password}encryptedKey'):
+    for node in tree.iter('{http://schemas.microsoft.com/office/2006/keyEncryptor/password}encryptedKey'):
         spinCount = node.attrib.get("spinCount")
         assert(spinCount)
         saltSize = node.attrib.get("saltSize")
